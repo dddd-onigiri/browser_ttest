@@ -4,9 +4,9 @@ from scipy import stats
 from PIL import Image
 from statistics import median, variance
 
-st.set_page_config(page_title="ブラウザt検定", layout="wide")
+st.set_page_config(page_title="ブラウザt検定(対応なし)", layout="wide")
 
-st.title("ブラウザt検定")
+st.title("ブラウザt検定(対応なし)")
 st.caption("Created by Daiki Ito")
 st.write("")
 st.subheader("ブラウザでt検定　→　表　→　解釈まで出力できるウェブアプリです。")
