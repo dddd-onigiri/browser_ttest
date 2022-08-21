@@ -22,4 +22,8 @@ GIGAスクールで一人一台端末が配備される中
     pandas
     scipy
 
+ご意見・ご要望は↓
+https://forms.gle/G5sMYm7dNpz2FQtU9
+まで
+
 開発者　Daiki Ito（高校　情報科教員）
