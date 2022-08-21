@@ -40,7 +40,7 @@ st.image(image)
 # st.video(video_bytes)
 
 # デモ用ファイル
-df = pd.read_excel('ttest_demo.xlsx')
+df = pd.read_excel('ttest_demo.xlsx', sheet_name=0)
 
 # xlsxファイルのアップロード
 upload_files_xlsx = st.file_uploader("ファイルアップロード", type='xlsx')
@@ -50,7 +50,7 @@ if upload_files_xlsx:
     # dfを初期化
     df.drop(range(len(df)))
     # xlsxファイルの読み込み → データフレームにセット
-    df = pd.read_excel(upload_files_xlsx)
+    df = pd.read_excel(upload_files_xlsx, sheet_name=0)
 
 # データフレーム表示ボタン
 if st.checkbox('データフレームの表示'):
@@ -60,7 +60,8 @@ if st.checkbox('データフレームの表示'):
 with st.form(key='variable_form'):
     st.subheader("分析に使用する変数の選択")
     st.write("")
-    st.write("ファイルをアップロードした場合、確認ボタンを２回押さないと独立変数の判定が出ません（アップデート予定）")
+    st.write(
+        "ファイルをアップロードした場合、確認ボタンを２回押さないと独立変数の判定が出ません（アップデート予定）")
 
     # 独立変数と従属変数のセット
     ivList = df.columns.tolist()
@@ -137,7 +138,7 @@ with st.form(key='check_form'):
 with st.form(key='analyze_form'):
     if TTEST_btn:
         st.subheader('【分析結果】')
-
+        st.write('【要約統計量】')
         # 独立変数の要素の数を取得
         dvRange = len(DependentVariable)
 
@@ -151,10 +152,6 @@ with st.form(key='analyze_form'):
         df00_list = [IndependentVariable]
         df00_list = df00_list + DependentVariable
         df00 = df[df00_list]
-
-        # 作業用データフレーム（df00）の群分け変数をstr型に変換
-        # df00.iloc[:, 0].astype(str)
-        # st.text(df00[IndependentVariable].dtype)
 
         # サマリ(df0)用のデータフレームのセット
         df0 = pd.DataFrame(index=summaryList, columns=summaryColumns)
@@ -173,8 +170,6 @@ with st.form(key='analyze_form'):
             df0.at[df00.columns[n], '最小値'] = y.min()
             df0.at[df00.columns[n], '最大値'] = y.max()
             n += 1
-
-        st.write('【要約統計量】')
 
         # 要約統計量（サマリ）のデータフレームを表示
         st.dataframe(df0)
@@ -302,5 +297,5 @@ with st.form(key='analyze_form'):
 
         TTEST_btn = st.form_submit_button('OK')
 
-st.write('ご意見・ご要望は→','https://forms.gle/G5sMYm7dNpz2FQtU9','まで')
+st.write('ご意見・ご要望は→', 'https://forms.gle/G5sMYm7dNpz2FQtU9', 'まで')
 st.write('© 2022 Daiki Ito. All Rights Reserved.')
