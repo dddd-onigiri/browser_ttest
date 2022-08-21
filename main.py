@@ -4,7 +4,8 @@ from scipy import stats
 from PIL import Image
 from statistics import median, variance
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="ブラウザt検定", layout="wide")
+
 st.title("ブラウザt検定")
 st.caption("Created by Daiki Ito")
 st.write("")
