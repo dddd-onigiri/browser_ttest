@@ -6,7 +6,7 @@ from statistics import median, variance
 
 st.set_page_config(layout="wide")
 st.title("ブラウザt検定")
-st.caption("created by Daiki Ito")
+st.caption("Created by Daiki Ito")
 st.write("")
 st.subheader("ブラウザでt検定　→　表出力を行えるウェブアプリです。")
 st.write("iPad等でも分析を行うことができます")
