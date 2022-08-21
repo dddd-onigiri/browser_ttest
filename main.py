@@ -9,7 +9,7 @@ st.set_page_config(page_title="ブラウザt検定", layout="wide")
 st.title("ブラウザt検定")
 st.caption("Created by Daiki Ito")
 st.write("")
-st.subheader("ブラウザでt検定　→　表出力を行えるウェブアプリです。")
+st.subheader("ブラウザでt検定　→　表出力　→　解釈まで行えるウェブアプリです。")
 st.write("iPad等でも分析を行うことができます")
 st.write("")
 
