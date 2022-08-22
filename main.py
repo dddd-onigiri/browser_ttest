@@ -53,7 +53,7 @@ if upload_files_xlsx:
     # xlsxファイルの読み込み → データフレームにセット
     df = pd.read_excel(upload_files_xlsx, sheet_name=0)
     # 欠損値を含むレコードを削除
-    df.isna()
+    df.dropna(how='any', inplace=True)
 
 # データフレーム表示ボタン
 if st.checkbox('データフレームの表示'):
