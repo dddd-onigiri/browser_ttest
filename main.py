@@ -58,6 +58,8 @@ if st.checkbox('データフレームの表示'):
 
 # 変数選択フォーム
 with st.form(key='variable_form'):
+    # 欠損値を含むレコードを削除
+    df.dropna()
     st.subheader("分析に使用する変数の選択")
     st.write("")
     st.write(
