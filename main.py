@@ -14,11 +14,17 @@ st.write("iPad等でも分析を行うことができます")
 st.write("")
 
 st.subheader("【注意事項】")
-st.write("群分け変数に数値(0、1等)は使わないでください")
+st.write('<span style="color:red">群分け変数に数値(0、1等)は使わないでください。</span>',
+         unsafe_allow_html=True)
 st.write("また、excelファイルに不備があるとエラーが出ます")
-st.write("デフォルトでデモ用データの分析ができます")
-st.write("ファイルをアップせずに「データフレームの表示」ボタンを押すと　デモ用のデータを確認できます")
-st.write("欠損値を含むレコード（行）は自動で削除されます")
+st.write('<span style="color:blue">デフォルトでデモ用データの分析ができます。</span>',
+         unsafe_allow_html=True)
+st.write(
+    '<span style="color:blue">ファイルをアップせずに「データフレームの表示」ボタンを押すと　'
+    'デモ用のデータを確認できます。</span>',
+    unsafe_allow_html=True)
+st.write('<span style="color:red">欠損値を含むレコード（行）は自動で削除されます。</span>',
+         unsafe_allow_html=True)
 
 code = '''
 #使用ライブラリ
