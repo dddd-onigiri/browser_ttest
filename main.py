@@ -18,6 +18,7 @@ st.write("群分け変数に数値(0、1等)は使わないでください")
 st.write("また、excelファイルに不備があるとエラーが出ます")
 st.write("デフォルトでデモ用データの分析ができます")
 st.write("ファイルをアップせずに「データフレームの表示」ボタンを押すと　デモ用のデータを確認できます")
+st.write("欠損値を含むレコード（行）は自動で削除されます")
 
 code = '''
 #使用ライブラリ
@@ -51,6 +52,8 @@ if upload_files_xlsx:
     df.drop(range(len(df)))
     # xlsxファイルの読み込み → データフレームにセット
     df = pd.read_excel(upload_files_xlsx, sheet_name=0)
+    # 欠損値を含むレコードを削除
+    df.dropna()
 
 # データフレーム表示ボタン
 if st.checkbox('データフレームの表示'):
@@ -58,8 +61,6 @@ if st.checkbox('データフレームの表示'):
 
 # 変数選択フォーム
 with st.form(key='variable_form'):
-    # 欠損値を含むレコードを削除
-    df.dropna()
     st.subheader("分析に使用する変数の選択")
     st.write("")
     st.write(
