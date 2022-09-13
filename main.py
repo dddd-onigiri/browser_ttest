@@ -141,7 +141,7 @@ with st.form(key='check_form'):
         for dvListView in range(dvRangeView):
             st.write(f'● 'f'{(DependentVariable[n])}')
             n += 1
-        st.write('　に優位な差が生まれるか検定します。')
+        st.write('　に有意な差が生まれるか検定します。')
 
     # 分析実行ボタンの表示
     TTEST_btn = st.form_submit_button('分析実行')
