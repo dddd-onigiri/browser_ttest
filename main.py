@@ -21,7 +21,7 @@ st.write("")
 st.subheader("【注意事項】")
 st.write('<span style="color:red">群分け変数に数値(0、1等)は使わないでください。</span>',
          unsafe_allow_html=True)
-st.write("また、excelファイルに不備があるとエラーが出ます")
+st.write("また、Excelファイルに不備があるとエラーが出ます")
 st.write('<span style="color:blue">デフォルトでデモ用データの分析ができます。</span>',
          unsafe_allow_html=True)
 st.write(
