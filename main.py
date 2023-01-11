@@ -21,7 +21,7 @@ st.write("")
 st.subheader("【注意事項】")
 st.write('<span style="color:red">群分け変数に数値(0、1等)は使わないでください。</span>',
          unsafe_allow_html=True)
-st.write("また、excelファイルに不備があるとエラーが出ます")
+st.write("また、Excelファイルに不備があるとエラーが出ます")
 st.write('<span style="color:blue">デフォルトでデモ用データの分析ができます。</span>',
          unsafe_allow_html=True)
 st.write(
@@ -46,6 +46,11 @@ st.code(code, language='python')
 image = Image.open('ttest.png')
 st.image(image)
 
+# 変数設定の注意点
+if st.checkbox('注意点の表示（クリックで開きます）'):
+    attentionImage = Image.open('ttest_attention.png')
+    st.image(attentionImage)
+
 # 使い方動画
 # video_file = open('雨音子.mp4', 'rb')  # 動画はテスト
 # video_bytes = video_file.read()
@@ -67,7 +72,7 @@ if upload_files_xlsx:
     df.dropna(how='any', inplace=True)
 
 # データフレーム表示ボタン
-if st.checkbox('データフレームの表示'):
+if st.checkbox('データフレームの表示（クリックで開きます）'):
     st.dataframe(df, width=0)
 
 # 変数選択フォーム
